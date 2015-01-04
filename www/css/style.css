@@ -1,0 +1,143 @@
+/* Empty. Add your own CSS if you like */
+
+.home {
+  padding-top: 26px;
+}
+
+#centered-logo {
+  margin: 20% auto auto auto;
+  max-width: 350px;
+}
+
+#centered-logo img {
+  width: 100px;
+  margin-top: -15px;
+  margin-bottom: 25px;
+}
+
+.alert.alert-error {
+  margin: 10px 0px;
+  color: #c0392b;
+}
+
+.pull-right {
+  float: right;
+}
+
+.tiles-container {
+  width: 264px;
+  margin: 0 auto;
+}
+
+.tile {
+  width: 128px;
+  height: 128px;
+  display: inline-block;
+  text-align: center;
+  padding: 8px;
+  margin: 3px 1px;
+  text-decoration: none;
+}
+
+.tile.activated {
+  opacity: 0.6;
+}
+
+.tile.green-a {
+  background-color: #52B64E;
+  color: #fafafa;
+}
+
+.tile.green-b {
+  background-color: #169A79;
+  color: #fafafa;
+}
+
+.tile.blue {
+  background-color: #134FA0;
+  color: #fafafa;
+}
+
+.tile > .icon {
+  font-size: 80px;
+  margin: 6px;
+  display: block;
+}
+
+.tile > .title {
+  display: block;
+}
+
+.tile.double {
+  width: 262px;
+}
+
+.matches-list .match {}
+
+.matches-list .match .status, .matches-list .match .date, .match-detail .team, .players-list .team{
+  font-size: 0.8rem;
+  color: #aaaaaa;
+}
+
+.matches-list .match .buttons {
+  margin: 0px 0px;
+}
+
+.matches-list .match .buttons button {
+  padding: 0px;
+  margin: 4px;
+}
+
+.matches-list .match .buttons button .icon, .matches-list .match .buttons .icon:before {
+  font-size: 2.2rem;
+  position: absolute;
+  left: 2px;
+}
+
+.match-detail {
+  text-align: center;
+}
+
+.match-detail .nickname {
+  font-size: 1.2rem;
+}
+
+.match-detail .player {
+  display: inline-block;
+  margin: 2px 10px;
+}
+
+.match-detail i {
+  font-size: 3.6rem;
+}
+
+.match-detail .result {
+  display: inline-block;
+}
+
+.match-detail .result input {
+  width: 56px;
+  height: 56px;
+  font-size: 1.4rem;
+  border: 1px solid;
+  margin: 6px;
+  padding: 2px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.tile .match-detail .team {
+  color: #fafafa;
+}
+
+.tile .match-detail i {
+  font-size: 3.6rem;
+}
+
+.tile .match-detail .player {
+  margin: 0px 10px;
+}
+
+.tile .match-detail .nickname {
+  font-size: 1.2rem;
+}

@@ -1,0 +1,23 @@
+<ion-view title="Campeonatos">
+  <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+    <ion-nav-back-button 
+      class="button-icon icon ion-ios7-arrow-back">
+      Voltar
+    </ion-nav-back-button>
+    <ion-nav-buttons side="right">
+      <button 
+        class="button-icon icon ion-ios7-plus-outline" 
+        ui-sref="new-championship">
+      </button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+    <ion-list class="championships">
+      <ion-item 
+        ng-repeat="championship in championships" 
+        class="championship">
+        {{championship.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

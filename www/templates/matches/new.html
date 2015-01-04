@@ -1,0 +1,39 @@
+<ion-view title="Novo amistoso">
+  <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+    <ion-nav-back-button class="button-icon icon ion-ios7-arrow-back">Voltar</ion-nav-back-button>
+    <ion-nav-buttons side="right">
+      <button class="button icon-right ion-ios7-arrow-forward button-clear button-positive"
+        ng-click="finish(match)" ng-show="enableFinish">OK</button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content class="padding">
+    <h4>Agendar para</h4>
+    <div class="alert alert-error" ng-show="msg">{{msg}}</div>
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Data </span>
+        <input ng-model="match.scheduled_tmp_date"
+          ng-change="checkFinish(match)" min="{{min_date}}" type="date">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Horario </span>
+        <input ng-model="match.scheduled_time"
+          ng-change="checkFinish(match)"  min="{{min_time}}" type="time">
+      </label>
+    </div>
+    <h4>Jogadores disponíveis</h4>
+    <div class="list players-list">
+      <label ng-click="checkFinish(match)"
+          ng-repeat="player in players"
+          class="item item-radio item-icon-left">
+        <input ng-model="match.away_player" type="radio" name="player" ng-value="player">
+        <div class="item-content">
+          <span class="title">{{ player.nickname }}</span>
+          <span class="team">{{ player.team.name }}</span>
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+    </div>
+  </ion-content>
+</ion-view>

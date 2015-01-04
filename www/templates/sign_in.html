@@ -1,0 +1,34 @@
+<ion-view hide-nav-bar="true">
+  <ion-content class="padding">
+    <div id="centered-logo">
+      <center>
+        <img src="img/logo.png" alt="logo" />
+      </center>
+      <div ng-show="msg" class="alert alert-error">
+        {{msg}}
+      </div>
+      <form name="signinForm" ng-submit="signIn(credentials)">
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="email" placeholder="e-mail" ng-model="credentials.email">
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="password" ng-model="credentials.password">
+          </label>
+        </div>
+        <button type="submit" class="button button-outline button-block button-positive">
+          Entrar
+        </button>
+      </form>
+      <div class="links row">
+        <div class="col">
+          <a class="button button-clear button-positive button-small" href="#/password_forgot">Esqueci minha senha</a>
+        </div>
+        <div class="col">
+          <a class="button button-clear button-positive button-small" href="#/sign_up">Não sou cadastrado</a>
+        </div>
+      </div>
+    </div>
+    <a href="#/config"><i class="icon ion-gear-a" style="float: right;"></i></a>
+  </ion-content>
+</ion-view>

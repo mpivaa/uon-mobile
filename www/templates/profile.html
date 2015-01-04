@@ -1,0 +1,47 @@
+<ion-view title="Perfil">
+  <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+    <ion-nav-back-button ng-click="goBack()" class="button-icon icon ion-ios7-arrow-back">Voltar</ion-nav-back-button>
+    <ion-nav-buttons side="right">
+      <button class="button icon-right ion-ios7-arrow-forward button-clear button-positive"
+        ng-click="save(player)" ng-show="enableNext">OK</button>
+    <ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+    <div ng-show="msg" class="alert alert-error padding">
+      {{msg}}
+    </div>
+    <form name="profileForm" ng-submit="debouncedSave(player)">
+
+      <div class="list">
+        <label class="item item-input">
+            <span class="input-label" ng-class="{'has-error': errors.nickname}">
+              nickname
+              <span class="input-errors" ng-show="errors.nickname">{{ errors.nickname }}</span>
+            </span>
+            <input type="text" ng-model="player.nickname" placeholder="nickname">
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Time
+            <span class="input-errors" ng-show="errors.team">{{ errors.team }}</span>
+          </div>
+          <select ng-model="player.team"
+            ng-options="team.name for team in teams track by team.id">
+          </select>
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Plataforma
+            <span class="input-errors" ng-show="errors.platform">{{ errors.platform }}</span>
+          </div>
+          <select ng-model="player.platform"
+            ng-options="platform.name for platform in platforms track by platform.id">
+          </select>
+        </label>
+        <div ng-if="!performingSignUp" ui-sref='sign_in' class="item">
+          <div>Desconectar</div>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

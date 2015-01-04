@@ -1,0 +1,167 @@
+@import "../lib/ionic/scss/ionic";
+
+/* Empty. Add your own CSS if you like */
+
+.home {
+  padding-top: 26px;
+}
+
+#centered-logo {
+  margin: 20% auto auto auto;
+  max-width: 350px;
+}
+
+#centered-logo img {
+  width: 100px;
+  margin-top: -15px;
+  margin-bottom: 25px;
+}
+
+.alert.alert-error {
+  margin: 10px 0px;
+  color: #c0392b;
+}
+
+.pull-right {
+  float: right;
+}
+
+.tiles-container {
+  width: 264px;
+  margin: 0 auto;
+}
+
+.tile {
+  width: 128px;
+  height: 128px;
+  display: inline-block;
+  text-align: center;
+  padding: 8px;
+  margin: 3px 1px;
+  text-decoration: none;
+}
+
+.tile.activated {
+  opacity: 0.6;
+}
+
+.tile.green-a {
+  background-color: #52B64E;
+  color: #fafafa;
+}
+
+.tile.green-b {
+  background-color: #169A79;
+  color: #fafafa;
+}
+
+.tile.blue {
+  background-color: #134FA0;
+  color: #fafafa;
+}
+
+.tile > .icon {
+  font-size: 80px;
+  margin: 6px;
+  display: block;
+}
+
+.tile > .title {
+  display: block;
+}
+
+.tile.double {
+  width: 262px;
+}
+
+
+.matches-list .match, .match-detail, .players-list {
+  .status, .date, .team {
+    font-size: 0.8rem;
+    color: #aaaaaa;
+  }
+}
+
+.matches-list .match .buttons {
+  position: absolute;
+  right: 12px;
+  top: 6px;
+
+  button {
+    padding: 0px;
+    min-width: 34px;
+
+    .icon, .icon:before, .matches-list .match .buttons .icon, .icon, 
+    .matches-list .match .buttons .icon:before,
+    .button .icon:before {
+      font-size: 34px !important;
+      position: absolute;
+      left: 2px;
+    }
+  }
+}
+
+.matches-list .match {
+  padding-left: 48px;
+
+  .icon {
+    left: 8px;
+  }
+}
+
+.match-detail {
+  text-align: center;
+
+  .nickname {
+    font-size: 1.2rem;
+  }
+
+  .player {
+    display: inline-block;
+    margin: 2px 10px;
+  }
+
+  i {
+    font-size: 3.6rem;
+  }
+
+  .result {
+    display: inline-block;
+    input {
+      width: 56px;
+      height: 56px;
+      font-size: 1.4rem;
+      border: 1px solid;
+      margin: 6px;
+      padding: 2px;
+      border-radius: 50%;
+      text-align: center;
+    }
+  }
+}
+
+.tile .match-detail {
+  .team {
+    color: #fafafa;
+  }
+
+  .tile .match-detail .player {
+    margin: 0px 10px;
+  }
+}
+
+.input-errors {
+  font-size: 0.8rem;
+  color: #c0392b;
+}
+
+label.item {
+  .input-label.has-error {
+    padding-bottom: 8px;
+    .input-errors {
+      position: absolute;
+      bottom: -1px;
+      left: 16px;
+    }
+  }
+}

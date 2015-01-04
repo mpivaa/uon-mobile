@@ -1,0 +1,41 @@
+<ion-view title="Amistosos">
+  <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+    <ion-nav-back-button class="button-icon icon ion-ios7-arrow-back">Voltar</ion-nav-back-button>
+    <ion-nav-buttons side="right">
+      <button class="button-icon icon ion-ios7-plus-outline" ui-sref="new-match"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+    <ion-list class="matches-list">
+      <ion-item ng-repeat="match in matches" class="match item-icon-left">
+        <div ui-sref="show-match({id: match.id})">
+          <i class="icon ion-ribbon-b"></i>
+          <div>
+            <span class="home">{{ match.home.nickname }} {{ match.home.score }}</span>
+            x
+            <span class="away">{{ match.away.score }} {{ match.away.nickname }}</span>
+          </div>
+
+          <div>
+            <span class="status">{{ status(match.status) }} -</span> <span class="date">{{ match.scheduled_date | date }}</span>
+          </div>
+        </div>
+
+        <div ng-if="match.status == 'waiting' && match.home.id != player.id" class="buttons">
+          <button ng-click="accept(match)" class="button button-clear button-balanced">
+            <i class="icon ion-ios7-circle-filled"></i>
+          </button>
+          <button ng-click="reject(match)" class="button button-clear button-assertive">
+            <i class="icon ion-ios7-circle-filled"></i>
+          </button>
+        </div>
+
+        <div ng-if="match.status == 'scheduled' && match.home.id == player.id" class="buttons">
+          <button ui-sref="show-match({id: match.id})" class="button button-clear button-positive">
+            <i class="icon ion-ios7-checkmark-outline"></i>
+          </button>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

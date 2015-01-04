@@ -1,0 +1,33 @@
+<ion-view title="Amistoso">
+  <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+    <ion-nav-back-button ui-sref="matches" class="button-icon icon ion-ios7-arrow-back">Voltar</ion-nav-back-button>
+    <ion-nav-buttons side="right">
+      <button class="button button-clear button-icon icon ion-ios7-checkmark-outline button-positive" ng-show="canSendResult(match)" ng-click="sendResult(result)"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content class="padding">
+    <div class="match-detail">
+      <div class="home player">
+        <div class="player-info">
+          <div class="nickname">{{ match.home.nickname }}</div>
+          <div class="team">{{ match.home.team.name }}</div>
+        </div>
+        <div class="result">
+          <input type="number" ng-disabled="!canSendResult(match)" min="0" max="50" ng-model="result[match.home.id]">
+        </div>
+      </div>
+      <i class="ico ion-ios7-close-empty"></i>
+      <div class="away player">
+        <div class="player-info">
+          <div class="nickname">{{ match.away.nickname }}</div>
+          <div class="team">{{ match.away.team.name }}</div>
+        </div>
+        <div class="result">
+          <input type="number" ng-disabled="!canSendResult(match)" min="0" max"50" ng-model="result[match.away.id]">
+        </div>
+      </div>
+      <div>{{ status(match.status) }}</div>
+      <div>{{ match.scheduled_date | date:'medium' }}</div>
+    </div>
+  </ion-content>
+</ion-view>

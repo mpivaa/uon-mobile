@@ -1,0 +1,36 @@
+<ion-view title="Cadastro">
+  <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+    <ion-nav-back-button class="button-icon icon ion-ios7-arrow-back">
+      Voltar
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content> 
+    <div ng-show="msg" class="alert alert-error padding">
+      {{msg}}
+    </div>
+    <form name="signupForm" ng-submit="signUp(credentials)">
+      <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">e-mail</span>
+          <input type="email" placeholder="e-mail" ng-model="credentials.email">
+          <span class="input-errors" ng-show="errors.email">{{ errors.email }}</span>
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">password</span>
+          <input type="password" placeholder="password" ng-model="credentials.password">
+          <span class="input-errors" ng-show="errors.password">{{ errors.password }}</span>
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">confirmação password</span>
+          <input type="password" placeholder="confirmação password" ng-model="credentials.password_confirmation">
+          <span class="input-errors" ng-show="errors.password_confirmation">{{ errors.password_confirmation }}</span>
+        </label>
+      </div>
+      <div class="padding">
+        <button type="submit" class="pull-right button button-outline button-positive">
+          Enviar 
+        </button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
